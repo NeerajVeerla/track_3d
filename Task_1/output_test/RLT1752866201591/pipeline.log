@@ -1,0 +1,115 @@
+2026-03-26 12:58:21,992 - INFO - ============================================================
+2026-03-26 12:58:21,992 - INFO - VIDEO QUALITY ASSESSMENT PIPELINE - START
+2026-03-26 12:58:21,992 - INFO - ============================================================
+2026-03-26 12:58:21,992 - INFO - Input directory: input/Task1/RLT1752866201591/images
+2026-03-26 12:58:21,992 - INFO - Output directory: output_test/RLT1752866201591
+2026-03-26 12:58:21,992 - INFO - Config: top_crop=0.2, bottom_crop=0.2
+2026-03-26 12:58:21,992 - INFO - 
+[LOADING] Reading frame list...
+2026-03-26 12:58:21,996 - INFO - Found 480 frames
+2026-03-26 12:58:21,996 - INFO - Output structure created: output_test/RLT1752866201591
+2026-03-26 12:58:21,996 - INFO - 
+[PASS 1] Scoring all frames...
+2026-03-26 12:58:21,996 - INFO - Pass 1: Scoring 480 frames...
+2026-03-26 12:58:22,878 - INFO - Embedding model loaded on device: cpu
+2026-03-26 12:58:22,878 - INFO - Loading frames into memory...
+2026-03-26 12:58:47,552 - INFO - Loaded 480 frames successfully
+2026-03-26 12:58:47,569 - INFO - Extracting DINOv2 embeddings (batched)...
+2026-03-26 13:00:01,546 - INFO - Extracted 480 embeddings
+2026-03-26 13:00:01,550 - INFO - Computing blur and darkness scores...
+2026-03-26 13:00:02,399 - INFO -   Scored 10/480 frames
+2026-03-26 13:00:03,081 - INFO -   Scored 20/480 frames
+2026-03-26 13:00:03,743 - INFO -   Scored 30/480 frames
+2026-03-26 13:00:04,367 - INFO -   Scored 40/480 frames
+2026-03-26 13:00:05,123 - INFO -   Scored 50/480 frames
+2026-03-26 13:00:06,106 - INFO -   Scored 60/480 frames
+2026-03-26 13:00:07,032 - INFO -   Scored 70/480 frames
+2026-03-26 13:00:07,860 - INFO -   Scored 80/480 frames
+2026-03-26 13:00:08,758 - INFO -   Scored 90/480 frames
+2026-03-26 13:00:09,469 - INFO -   Scored 100/480 frames
+2026-03-26 13:00:10,129 - INFO -   Scored 110/480 frames
+2026-03-26 13:00:10,779 - INFO -   Scored 120/480 frames
+2026-03-26 13:00:11,661 - INFO -   Scored 130/480 frames
+2026-03-26 13:00:12,253 - INFO -   Scored 140/480 frames
+2026-03-26 13:00:12,866 - INFO -   Scored 150/480 frames
+2026-03-26 13:00:13,583 - INFO -   Scored 160/480 frames
+2026-03-26 13:00:14,315 - INFO -   Scored 170/480 frames
+2026-03-26 13:00:14,986 - INFO -   Scored 180/480 frames
+2026-03-26 13:00:15,741 - INFO -   Scored 190/480 frames
+2026-03-26 13:00:16,579 - INFO -   Scored 200/480 frames
+2026-03-26 13:00:17,320 - INFO -   Scored 210/480 frames
+2026-03-26 13:00:18,065 - INFO -   Scored 220/480 frames
+2026-03-26 13:00:19,010 - INFO -   Scored 230/480 frames
+2026-03-26 13:00:19,825 - INFO -   Scored 240/480 frames
+2026-03-26 13:00:20,544 - INFO -   Scored 250/480 frames
+2026-03-26 13:00:21,283 - INFO -   Scored 260/480 frames
+2026-03-26 13:00:22,105 - INFO -   Scored 270/480 frames
+2026-03-26 13:00:22,939 - INFO -   Scored 280/480 frames
+2026-03-26 13:00:23,742 - INFO -   Scored 290/480 frames
+2026-03-26 13:00:25,024 - INFO -   Scored 300/480 frames
+2026-03-26 13:00:26,330 - INFO -   Scored 310/480 frames
+2026-03-26 13:00:27,485 - INFO -   Scored 320/480 frames
+2026-03-26 13:00:28,760 - INFO -   Scored 330/480 frames
+2026-03-26 13:00:29,498 - INFO -   Scored 340/480 frames
+2026-03-26 13:00:30,228 - INFO -   Scored 350/480 frames
+2026-03-26 13:00:30,936 - INFO -   Scored 360/480 frames
+2026-03-26 13:00:31,654 - INFO -   Scored 370/480 frames
+2026-03-26 13:00:32,324 - INFO -   Scored 380/480 frames
+2026-03-26 13:00:33,015 - INFO -   Scored 390/480 frames
+2026-03-26 13:00:33,679 - INFO -   Scored 400/480 frames
+2026-03-26 13:00:34,314 - INFO -   Scored 410/480 frames
+2026-03-26 13:00:35,006 - INFO -   Scored 420/480 frames
+2026-03-26 13:00:35,676 - INFO -   Scored 430/480 frames
+2026-03-26 13:00:36,344 - INFO -   Scored 440/480 frames
+2026-03-26 13:00:37,007 - INFO -   Scored 450/480 frames
+2026-03-26 13:00:37,717 - INFO -   Scored 460/480 frames
+2026-03-26 13:00:38,468 - INFO -   Scored 470/480 frames
+2026-03-26 13:00:39,165 - INFO -   Scored 480/480 frames
+2026-03-26 13:00:39,166 - INFO - Pass 1 complete: 480 frames scored
+2026-03-26 13:00:39,579 - INFO - 
+[PASS 2] Filtering dark and blurry...
+2026-03-26 13:00:39,579 - INFO - Pass 2: Filtering dark and blurry frames...
+2026-03-26 13:00:39,582 - INFO -   Processed 20/480 | Kept: 20
+2026-03-26 13:00:39,582 - INFO -   Processed 40/480 | Kept: 40
+2026-03-26 13:00:39,582 - INFO -   Processed 60/480 | Kept: 60
+2026-03-26 13:00:39,583 - INFO -   Processed 80/480 | Kept: 80
+2026-03-26 13:00:39,583 - INFO -   Processed 100/480 | Kept: 100
+2026-03-26 13:00:39,584 - INFO -   Processed 120/480 | Kept: 116
+2026-03-26 13:00:39,584 - INFO -   Processed 140/480 | Kept: 133
+2026-03-26 13:00:39,585 - INFO -   Processed 160/480 | Kept: 146
+2026-03-26 13:00:39,585 - INFO -   Processed 180/480 | Kept: 165
+2026-03-26 13:00:39,585 - INFO -   Processed 200/480 | Kept: 183
+2026-03-26 13:00:39,585 - INFO -   Processed 220/480 | Kept: 199
+2026-03-26 13:00:39,585 - INFO -   Processed 240/480 | Kept: 214
+2026-03-26 13:00:39,585 - INFO -   Processed 260/480 | Kept: 231
+2026-03-26 13:00:39,586 - INFO -   Processed 280/480 | Kept: 247
+2026-03-26 13:00:39,586 - INFO -   Processed 300/480 | Kept: 267
+2026-03-26 13:00:39,586 - INFO -   Processed 320/480 | Kept: 287
+2026-03-26 13:00:39,586 - INFO -   Processed 340/480 | Kept: 307
+2026-03-26 13:00:39,586 - INFO -   Processed 360/480 | Kept: 327
+2026-03-26 13:00:39,586 - INFO -   Processed 380/480 | Kept: 347
+2026-03-26 13:00:39,586 - INFO -   Processed 400/480 | Kept: 366
+2026-03-26 13:00:39,587 - INFO -   Processed 420/480 | Kept: 386
+2026-03-26 13:00:39,587 - INFO -   Processed 440/480 | Kept: 405
+2026-03-26 13:00:39,587 - INFO -   Processed 460/480 | Kept: 425
+2026-03-26 13:00:39,587 - INFO -   Processed 480/480 | Kept: 445
+2026-03-26 13:00:39,587 - INFO - Pass 2 complete: 35 frames marked for discard
+2026-03-26 13:00:39,587 - INFO - 
+[PASS 3] Detecting near-duplicates...
+2026-03-26 13:00:39,587 - INFO - Pass 3: Detecting near-duplicates...
+2026-03-26 13:00:39,595 - INFO -   445 frames survived Pass 2
+2026-03-26 13:00:39,596 - INFO - Loading surviving frames for duplicate detection...
+2026-03-26 13:01:38,151 - INFO - Pass 3 complete: 7 duplicates detected
+2026-03-26 13:01:38,466 - INFO - 
+[SAVING] Writing results...
+2026-03-26 13:01:41,845 - INFO - 
+[REPORTING] Generating report...
+2026-03-26 13:01:41,864 - INFO - Report saved: output_test/RLT1752866201591/report.csv
+2026-03-26 13:01:41,864 - INFO - 
+============================================================
+2026-03-26 13:01:41,864 - INFO - PIPELINE COMPLETE
+2026-03-26 13:01:41,864 - INFO - ============================================================
+2026-03-26 13:01:41,864 - INFO - Total frames: 480
+2026-03-26 13:01:41,864 - INFO - Kept: 438 (91.2%)
+2026-03-26 13:01:41,865 - INFO - Discarded: 42 (8.8%)
+2026-03-26 13:01:41,865 - INFO - ============================================================
