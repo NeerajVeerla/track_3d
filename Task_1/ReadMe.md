@@ -101,7 +101,8 @@ Supported image formats: `.jpg`, `.jpeg`, `.png`, `.bmp`, `.webp`.
 
 ## Submission Packaging Note
 
-For email submission, this repository is intentionally packaged as:
+input file path :  https://ml-team-constructn.s3.us-west-2.amazonaws.com/Assignment/Level_1/Task1.zip
+For submission, this repository is intentionally packaged as:
 - `input/` contains only a few sample images (for structure/example).
 - `output_test/<folder_name>/discarded/` is retained.
 - `output_test/<folder_name>/kept/` images were removed to reduce attachment size.
