@@ -44,13 +44,88 @@ If we score the full frame directly, false blur/darkness/duplicate cues can incr
 
 ### Option B: Cubemap conversion (6 faces)
 - Pros: lower distortion per face, common for 360 processing
-- Cons: face boundary artifacts, stitching consistency concerns, higher compute and implementation complexity
+- Cons: face boundary artifacts, higher compute and implementation complexity
+
+Cubemap Conversion
+
+### Steps
+
+1. Define 6 cube face orientations:
+   - Front (+Z), Back (−Z), Left (−X), Right (+X), Top (+Y), Bottom (−Y)
+
+2. For each face:
+   - Set camera intrinsics with 90° Field of View (FOV)
+   - Define rotation matrix corresponding to face direction
+
+3. For each pixel (i, j) in the cube face:
+   - Convert pixel to normalized camera coordinates
+   - Generate 3D ray direction
+
+4. Transform ray to world coordinates:
+   - Apply rotation matrix:  
+     `ray_world = R * ray_camera`
+
+5. Convert 3D ray to spherical coordinates:
+   - θ (theta) = atan2(x, z)
+   - φ (phi) = asin(y)
+
+6. Map spherical coordinates to ERP image:
+   - u = (θ / 2π) + 0.5
+   - v = (φ / π) + 0.5
+
+7. Sample pixel value from ERP:
+   - Use bilinear interpolation
+
+8. Repeat for all 6 faces to obtain cubemap
 
 ### Option C: Projective view extraction (virtual cameras)
 - Pros: local perspective realism, task-specific view control
 - Cons: requires viewpoint sampling strategy and robust multi-view aggregation
+Projective View Extraction (Virtual Cameras)
+
+### Steps
+
+1. Define a set of virtual camera orientations:
+   - Sample directions (θ, φ) over the sphere
+   - Choose number of views (e.g., 8, 12, 20)
+
+2. For each virtual camera:
+   - Define camera intrinsics (FOV, resolution)
+   - Compute rotation matrix R(θ, φ)
+
+3. For each pixel (i, j) in the perspective image:
+   - Convert pixel to normalized camera ray
+   - Generate 3D direction vector
+
+4. Transform ray to world coordinates:
+   - `ray_world = R * ray_camera`
+
+5. Convert ray to spherical coordinates:
+   - θ = atan2(x, z)
+   - φ = asin(y)
+
+6. Map to ERP coordinates:
+   - u = (θ / 2π) + 0.5
+   - v = (φ / π) + 0.5
+
+7. Sample from ERP image:
+   - Use bilinear interpolation
+
+8. Aggregate all generated views for downstream processing
+
+---
+
+##### Summary
+
+- Both cubemap and projective views are derived from ERP
+- Cubemap: fixed 6 views (structured, efficient)
+- Projective views: flexible sampling (task-specific, adaptive)
 
 ### Option D (Selected): Equatorial crop band
+
+Equatorial crop band refers to extracting a horizontal region around the equator of an ERP image where distortion is minimal.
+This region preserves near-perspective geometry, 
+
 - Pros: very simple, fast, robust for this assignment
 - Pros: removes most pole distortion and bottom camera-holder noise
 - Cons: discards some vertical FoV information
